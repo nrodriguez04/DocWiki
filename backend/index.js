@@ -4,11 +4,17 @@ const cors = require('cors');
 
 const app = express();
 
+const documentsRoute = require('./routes/documents');
+
+// Use routes
+app.use('/documents', documentsRoute);
+// Add more routes as needed
+
 // Middleware
 app.use(bodyParser.json());
 app.use(cors());
 
-// Define your routes and API endpoints here
+// Define routes and API endpoints here
 
 // Start the server
 const port = process.env.PORT || 3000;
